@@ -2,7 +2,9 @@
   --btns: #f4f3e7;
   --texts: black;
   --screen: #f2f7f8;
-  --container: #8fa4a8;
+  --container: #495253;
+  --solar: #16252b;
+  --solar-div: #708486;
 }
 
 *,
@@ -26,11 +28,42 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 5px;
+  border-radius: 10px;
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 2fr 4fr;
+  gap: 3px;
+  padding: 5px;
+}
+
+.brand {
+  color: white;
+  padding: 5px;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+.brand__id {
+  font-size: 0.825em;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.solar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--solar);
   gap: 3px;
   padding: 3px;
+  border-radius: 3px;
+}
+
+.solar__div {
+  background-color: var(--solar-div);
+  border-radius: 3px;
 }
 
 .screen {
