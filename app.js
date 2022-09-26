@@ -103,10 +103,10 @@ function ACBtnFunction() {
 }
 
 function transferBottomTextToTopText() {
-  if (screenBottomText == "") {
+  if (String(screenBottomText) == "") {
     screenTopText = screenTopText;
   } else {
-    screenTopText = screenBottomText;
+    screenTopText = String(screenBottomText);
     screenBottomText = "";
   }
 }
@@ -163,30 +163,23 @@ btnAC.onclick = () => {
 };
 
 btnAdd.onclick = (e) => {
-  if (operator == "+") {
+  if (operator == "+" && !(screenBottomText == "")) {
     addition();
-    screenBottomText = answer;
+    getAnswer();
     transferBottomTextToTopText();
     updateBottomTextView();
     updateTopTextView();
-  } else if (!(operator == "")) {
-    switch (operator) {
-      case "+":
-        addition();
-        break;
-      case "-":
-        subtraction();
-        break;
-      case "*":
-        multiplication();
-        break;
-      case "/":
-        division();
-        break;
+  } else if (!(operator == "") && !(screenBottomText == "")) {
+    if (operator == "-") {
+      subtraction();
+    } else if (operator == "*") {
+      multiplication();
+    } else if (operator == "/") {
+      division();
     }
     screenBottomText = answer;
     updateOperator("+");
-  } else if (operator == "") {
+  } else if (operator == "" || screenBottomText == "") {
     updateOperator("+");
   }
 };
@@ -194,28 +187,21 @@ btnAdd.onclick = (e) => {
 btnSub.onclick = (e) => {
   if (operator == "-") {
     subtraction();
-    screenBottomText = answer;
+    getAnswer();
     transferBottomTextToTopText();
     updateBottomTextView();
     updateTopTextView();
-  } else if (!(operator == "")) {
-    switch (operator) {
-      case "+":
-        addition();
-        break;
-      case "-":
-        subtraction();
-        break;
-      case "*":
-        multiplication();
-        break;
-      case "/":
-        division();
-        break;
+  } else if (!(operator == "") && !(screenBottomText == "")) {
+    if (operator == "+") {
+      addition();
+    } else if (operator == "*") {
+      multiplication();
+    } else if (operator == "/") {
+      division();
     }
     screenBottomText = answer;
     updateOperator("-");
-  } else if (operator == "") {
+  } else if (operator == "" || screenBottomText == "") {
     updateOperator("-");
   }
 };
@@ -223,28 +209,21 @@ btnSub.onclick = (e) => {
 btnMul.onclick = (e) => {
   if (operator == "*") {
     multiplication();
-    screenBottomText = answer;
+    getAnswer();
     transferBottomTextToTopText();
     updateBottomTextView();
     updateTopTextView();
-  } else if (!(operator == "")) {
-    switch (operator) {
-      case "+":
-        addition();
-        break;
-      case "-":
-        subtraction();
-        break;
-      case "*":
-        multiplication();
-        break;
-      case "/":
-        division();
-        break;
+  } else if (!(operator == "") && !(screenBottomText == "")) {
+    if (operator == "-") {
+      subtraction();
+    } else if (operator == "+") {
+      addition();
+    } else if (operator == "/") {
+      division();
     }
     screenBottomText = answer;
     updateOperator("*");
-  } else if (operator == "") {
+  } else if (operator == "" || screenBottomText == "") {
     updateOperator("*");
   }
 };
@@ -256,24 +235,17 @@ btnDiv.onclick = (e) => {
     transferBottomTextToTopText();
     updateBottomTextView();
     updateTopTextView();
-  } else if (!(operator == "")) {
-    switch (operator) {
-      case "+":
-        addition();
-        break;
-      case "-":
-        subtraction();
-        break;
-      case "*":
-        multiplication();
-        break;
-      case "/":
-        division();
-        break;
+  } else if (!(operator == "") && !(screenBottomText == "")) {
+    if (operator == "-") {
+      subtraction();
+    } else if (operator == "*") {
+      multiplication();
+    } else if (operator == "+") {
+      addition();
     }
     screenBottomText = answer;
     updateOperator("/");
-  } else if (operator == "") {
+  } else if (operator == "" || screenBottomText == "") {
     updateOperator("/");
   }
 };
