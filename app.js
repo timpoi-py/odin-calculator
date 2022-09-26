@@ -170,6 +170,21 @@ btnAdd.onclick = (e) => {
     updateBottomTextView();
     updateTopTextView();
   } else if (!(operator == "")) {
+    switch (operator) {
+      case "+":
+        addition();
+        break;
+      case "-":
+        subtraction();
+        break;
+      case "*":
+        multiplication();
+        break;
+      case "/":
+        division();
+        break;
+    }
+    screenBottomText = answer;
     updateOperator("+");
   } else if (operator == "") {
     updateOperator("+");
@@ -184,6 +199,21 @@ btnSub.onclick = (e) => {
     updateBottomTextView();
     updateTopTextView();
   } else if (!(operator == "")) {
+    switch (operator) {
+      case "+":
+        addition();
+        break;
+      case "-":
+        subtraction();
+        break;
+      case "*":
+        multiplication();
+        break;
+      case "/":
+        division();
+        break;
+    }
+    screenBottomText = answer;
     updateOperator("-");
   } else if (operator == "") {
     updateOperator("-");
@@ -198,6 +228,21 @@ btnMul.onclick = (e) => {
     updateBottomTextView();
     updateTopTextView();
   } else if (!(operator == "")) {
+    switch (operator) {
+      case "+":
+        addition();
+        break;
+      case "-":
+        subtraction();
+        break;
+      case "*":
+        multiplication();
+        break;
+      case "/":
+        division();
+        break;
+    }
+    screenBottomText = answer;
     updateOperator("*");
   } else if (operator == "") {
     updateOperator("*");
@@ -212,6 +257,21 @@ btnDiv.onclick = (e) => {
     updateBottomTextView();
     updateTopTextView();
   } else if (!(operator == "")) {
+    switch (operator) {
+      case "+":
+        addition();
+        break;
+      case "-":
+        subtraction();
+        break;
+      case "*":
+        multiplication();
+        break;
+      case "/":
+        division();
+        break;
+    }
+    screenBottomText = answer;
     updateOperator("/");
   } else if (operator == "") {
     updateOperator("/");
