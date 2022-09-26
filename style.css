@@ -1,5 +1,6 @@
 :root {
-  --btns: #f4f3e7;
+  --btns-500: #f4f3e7;
+  --btns-700: hsl(55, 37%, 96%);
   --texts: black;
   --screen: #f2f7f8;
   --container: #495253;
@@ -13,6 +14,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font: inherit;
 }
 
 body {
@@ -34,22 +36,32 @@ body {
   padding: 0.3em;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .brand {
   color: white;
-  padding: 5px;
+  padding: 0.325em;
   display: grid;
   justify-content: center;
   text-align: center;
-  font-size: min(1em, 4vw);
+  width: 50%;
+  height: 100%;
+}
+
+.brand__name {
+  font-weight: 900;
+  font-size: min(5vw, 1.4em);
 }
 
 .brand__id {
-  font-size: 0.825em;
+  font-size: min(3vw, 0.825em);
 }
 
-.header {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.brand__category {
+  font-size: min(3.5vw, 1em);
 }
 
 .solar {
@@ -59,6 +71,8 @@ body {
   gap: 0.2em;
   padding: 0.2em;
   border-radius: 0.2em;
+  width: 50%;
+  height: auto;
 }
 
 .solar__div {
@@ -75,9 +89,24 @@ body {
   grid-template-rows: 2fr 3fr;
 }
 
-/* .screen__top {
-  background-color: rgb(255, 198, 198);
-} */
+.screen > * {
+  padding: 0.3em;
+  overflow: auto;
+  text-align: right;
+}
+
+.screen__top {
+  font-size: clamp(1em, 5vw + 1em, 1.3em);
+}
+
+.screen__bot {
+  display: grid;
+  grid-template-columns: 0.2fr 0.8fr;
+}
+
+.screen__bot {
+  font-size: clamp(1.4em, 5vw + 1em, 1.825em);
+}
 
 .btns__container {
   display: grid;
@@ -87,14 +116,23 @@ body {
 }
 
 .btns {
-  font-size: 1.5em;
-  background-color: var(--btns);
+  font-size: clamp(1em, 5vw + 1em, 2em);
+  background-color: var(--btns-500);
   border-radius: 0.2em;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .btn-0 {
   grid-column: 1/3;
+}
+
+.btns:hover {
+  background-color: var(--btns-700);
+}
+
+.btn-mul {
+  font-size: clamp(0.8em, 5vw + 1em, 1.2em);
 }
