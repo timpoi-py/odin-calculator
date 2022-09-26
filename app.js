@@ -138,7 +138,6 @@ function showAnswer() {
 
 function getAnswer() {
   screenBottomText = answer;
-  console.log(typeof screenBottomText);
 }
 
 // if numbers and . tapped, show on Bottom screen
@@ -147,8 +146,6 @@ btns.forEach((btn) => {
   btn.onclick = (e) => {
     updateBottomText(returnPressedBtn(e));
     updateBottomTextView();
-
-    console.log(screenBottomText);
   };
 });
 
