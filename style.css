@@ -20,8 +20,9 @@
 body {
   height: 100vh;
   width: 100vw;
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -116,7 +117,7 @@ body {
 }
 
 .btns {
-  font-size: clamp(1em, 5vw + 1em, 2em);
+  font-size: min(5vw, 1.8em);
   background-color: var(--btns-500);
   border-radius: 0.2em;
   display: flex;
@@ -142,4 +143,36 @@ body {
 
 .btn-mul {
   font-size: clamp(0.8em, 5vw + 1em, 1.2em);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: black;
+  font-size: min(5vw, 1.2em);
+}
+
+.icon {
+  transition: transform 200ms ease-in-out;
+}
+
+.icon:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+path {
+  stroke: black;
 }
